@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生登录页面</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="{% static "registerLogin/css/login.css" %}">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "registerLogin/js/login.js" %}"></script>
+</head>
+<body>
+
+    <div class="login-content">
+        <div class="login-header">
+            <h3 class="login-title">登录</h3>
+        </div>
+        <div class="login-body">
+            <form class="login" method="##" action="##" onsubmit="return false">
+                <div class="login-identity">
+                    <span><i class="fa fa-address-book" aria-hidden="true" style="font-size:24px"></i></span>
+                    <input type="radio" name="identity" value="consumer" checked="checked">我是消费者
+                    <input type="radio" name="identity" value="seller">我是摊主
+                    <input type="radio" name="identity" value="manager">我是管理者
+                </div>
+                <div class="login-username">
+                    <span><i class="fa fa-user-circle" style="font-size:24px"></i></span>
+                    <input type="text" name="user_name" placeholder="请输入账号" id="user_name">
+                    <!-- 这里会有提示文本 p标签 -->
+                </div>
+                <div class="login-password">
+                    <span><i class="fa fa-key" style="font-size:24px"></i></span>
+                    <input type="password" placeholder="请输入密码" id="password">
+                    <!-- 这里会有提示文本 p标签 -->
+                </div>
+                <div class="login-remember">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        记住我
+                    </label>
+                </div>
+                <div class="login-confirm">
+                    <button class="login-btn" type="submit" title="登录" onclick="login()">登录</button>
+                </div>
+            </form>
+        </div>
+        <div class="login-footer">
+            <p class=login-forgetPassword>
+                <a>忘记密码？</a>
+            </p>
+            <p class="login-register">
+                还没有账户？
+                <a href="/register/">立即注册</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+<script>
+    $.ajaxSetup({
+        data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+    });
+</script>
+</html>

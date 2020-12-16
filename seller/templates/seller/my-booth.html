@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的摊位</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "seller/css/my-booth.css" %}">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{% static "seller/js/my-booth.js" %}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="/seller/my-booth/">我的摊铺</a>
+          <ul class="navbar-nav mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/seller/index/">返回首页</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/seller/my-info/">个人信息</a>
+            </li>
+          </ul>
+          <div class="btn-group-lg ml-auto" role="group">
+				 
+            <button class="btn btn-secondary" id="create-booth" type="button">
+              添加摊铺
+            </button> 
+            <button class="btn btn-warning font-weight-bold" id="logout" type="button">
+              退出
+            </button> 
+          </div>
+        </div>
+    </nav>
+    
+    <div class="box">
+      <h1>{{ market_id }}</h1>
+
+
+      <!-- 展示的是正在营业的摊位，营业时间长的排在前面 -->
+      <div class="container">
+        <div class="open-booth">
+          <h3 class="open-title">营业摊铺</h3>
+          {% for open_booth in my_booth_list.open %}
+            <div class="card mb-4 shadow-sm">
+              <img src={{ open_booth.pic_url }} class="card-img-top" width="100%" height="250" alt="{{ open_booth.booth_name }}">
+              <div class="card-body font-weight-bold">
+                <div class="tag">摊铺名称
+                  <em class="sep">|</em>
+                  <span class="booth-name">{{ open_booth.booth_name }}</span>
+                </div>
+                <div class="tag">摆摊地点
+                  <em class="sep">|</em>
+                  <span class="market-name">{{ open_booth.market_name }}</span>
+                </div>
+                <div class="tag">摆摊位置
+                  <em class="sep">|</em>
+                  <span class="market-address">{{ open_booth.market_address }}</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group mt-3">
+                    <button type="button" id="{{ open_booth.market_id }}" class="btn btn-sm btn-secondary btn-close">停止营业</button>
+                    <button type="button" class="btn btn-sm btn-secondary btn-edit">编辑</button>
+                  </div>
+                  <middle class="text-primary font-weight-bold">营业状态</middle>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- 未在营业状态的摊铺 -->
+        <div class="close-booth">
+          <h3 class="close-title">歇业摊铺</h3>
+          {% for close_booth in my_booth_list.close %}
+            <div class="card mb-4 shadow-sm">
+              <img src={{ close_booth.pic_url }} class="card-img-top" width="100%" height="250" alt="{{ close_booth.booth_name }}">
+              <div class="card-body font-weight-bold">
+                <div class="tag">摊铺名称
+                  <em class="sep">|</em>
+                  <span class="booth-name">{{ close_booth.booth_name }}</span>
+                </div>
+                <div class="tag">经营种类
+                  <em class="sep">|</em>
+                  <span class="booth-name">{{ close_booth.category }}</span>
+                </div>
+                <div class="tag">摊铺简介
+                  <em class="sep">|</em>
+                  <span class="booth-introduction">{{ close_booth.introduction }}</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group mt-3">
+                    <button type="button" class="btn btn-sm btn-secondary btn-open">开始营业</button>
+                    <button type="button" class="btn btn-sm btn-secondary btn-edit">编辑</button>
+                    <button type="button" class="btn btn-sm btn-secondary btn-delete">删除摊铺</button>
+                  </div>
+                  <middle class="text-muted font-weight-bold">歇业状态</middle>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+</body>
+<script>
+    $.ajaxSetup({
+      data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+    });
+    // 先把这个摆摊地点的id记录下来
+    var $market_id = {{ market_id }}
+</script>
+</html>

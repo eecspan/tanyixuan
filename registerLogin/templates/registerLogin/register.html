@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="{% static "registerLogin/css/register.css" %}">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "registerLogin/js/register.js" %}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="agile_info">
+            <div class="w3l_form">
+                <div class="left_grid_info">
+                    <h3>欢迎 !</h3>
+                    <h4>您可以选择消费者、摊主、管理者三种身份之一进行注册。</h4>
+                    <p>这里是摊易选网站，选择摊主、管理者身份注册时需要进行实名注册，谢谢配合！</p>
+                    <ul class="social_section_1info">
+                        <li><a href="#" class="w3_facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="w3_twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="w3_instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" class="w3_google"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="w3_pinterest"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#" class="w3_vimeo"><i class="fa fa-vimeo"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="w3_info">
+                <h2>注册您的账户</h2>
+                <p>请选择您想要注册的身份</p>
+                <form method="##" action="##" onsubmit="return false">
+                    <div class="input-group">
+                        <span><i class="fa fa-address-book" aria-hidden="true"></i></span>
+                        <input type="radio" name="identity" value="consumer" checked="checked">我是消费者
+                        <input type="radio" name="identity" value="seller">我是摊主
+                        <input type="radio" name="identity" value="manager">我是管理者
+                    </div>
+                    <div class="input-group" id="user_name">
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <input type="text" placeholder="用户账号" required="">
+                    </div>
+                    <div class="input-group" id="name">
+                        <span><i class="fa fa-id-card" aria-hidden="true"></i></span>
+                        <input type="text" placeholder="真实姓名" required="">
+                    </div>
+                    <div class="input-group" id="id_number">
+                        <span><i class="fa fa-id-card" aria-hidden="true"></i></span>
+                        <input type="text" placeholder="身份证号" required="">
+                    </div>
+                    <div class="input-group" id="nickname">
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <input type="text" placeholder="昵称" required="">
+                    </div>
+                    <div class="input-group" id="phone_number">
+                        <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <input type="text" placeholder="联系方式">
+                    </div>
+                    <div class="input-group" id="password">
+                        <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                        <input type="Password" placeholder="请输入密码" required="">
+                    </div>
+                    <div class="input-group" id="password-confirm">
+                        <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                        <input type="Password" placeholder="确认密码" required="">
+                    </div>
+                    <button class="btn btn-danger btn-block" type="submit" onclick="register()">点击注册</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $.ajaxSetup({
+        data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+    });
+</script>
+</html>

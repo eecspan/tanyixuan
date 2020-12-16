@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消费者主页</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "consumer/js/index.js" %}"></script>
+</head>
+<body>
+    <h1>这是消费者主页</h1>
+    <h2>欢迎你，{{ nickname }}!</h2>
+    <button id="logout"><a href="/logout/">退出登录</a></button>
+</body>
+</html>

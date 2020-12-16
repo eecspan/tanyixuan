@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    background: bisque;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-content
+{
+    /*height: 450px;*/
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.login-header
+{
+    padding: 25px;
+    text-align: center;
+    background-color:white;
+}
+
+.login-body
+{
+    padding: 25px 30px;
+    background-color: #9999FF; /* #9999FF*/
+}
+
+.login-identity
+{
+    width: 310px;
+    height: 24px;
+    padding: 10px;
+    padding-left: 27px;
+    line-height: 24px;
+}
+
+.login-username, .login-password, .login-confirm
+{
+    width: 310px;
+    height: 40px;
+    padding: 15px;
+    font-size: 0;
+}
+
+.login-username>span, .login-password>span
+{
+    width: 15%;
+    height: 40px;
+    border-radius: 10px 0 0 10px;
+    background-color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-username input, .login-password input
+{
+    display: inline-block;
+    width: 85%;
+    height: 40px;
+    border-radius: 0px 10px 10px 0;
+    font-size: 16px;
+    vertical-align: bottom;
+    border: none;
+    outline: none;
+}
+
+.login-username, .login-password {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.remind {
+    font-size:13px; 
+    color: red; 
+    white-space: nowrap;
+    align-items: center; 
+    line-height: 40px; 
+    padding-left: 3px
+}
+
+.login-remember{
+    padding: 0 15px 0 15px;
+}
+.checkbox
+{
+    cursor: pointer;
+    color:#FFCCCC;
+}
+
+.login-btn
+{
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(205, 47, 236); /*9933CC*/
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.login-footer
+{
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+.login-footer>p{
+    padding: 7px 0 7px 0;
+}
+.login-forgetPassword>a, .login-register>a
+{
+    color: #DC093A;
+    cursor: pointer;
+}

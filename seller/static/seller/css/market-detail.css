@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.logout {
+    margin-left: 50px;
+    float: right;
+}
+
+.market-detail {
+    height: 100%;
+    width: 700px;
+    min-width: 700px;
+    margin: 0 auto;
+}

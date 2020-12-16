@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>摊主首页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "seller/css/index.css" %}">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "seller/js/index.js" %}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="/seller/index/">摊主首页</a>
+          <ul class="navbar-nav mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/seller/my-booth/">我的摊铺</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/seller/my-info/">个人信息</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="输入类别、地点名称" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+          </form>
+          <button type="button" class="btn btn-warning btn-lg logout">退出</button>
+        </div>
+    </nav>
+    <div class="market-list">
+        <div class="filter-box btn-group" role="group" aria-label="Basic example">
+            <button type="button" id="default-btn" class="btn btn-secondary bg-warning">默认排序</button>
+            <button type="button" id="dis-btn" class="btn btn-secondary">距离优先</button>
+            <button type="button" id="rank-btn" class="btn btn-secondary">好评优先</button>
+        </div>
+        <ul class="market-list-scroll">
+            <!-- 这里展示商品的li -->
+        </ul>
+        <div class="page-alter">
+            <button type="button" id="pre-page" class="btn btn-sm btn-warning font-weight-bold">上一页</button>
+            <button class="btn disabled badge-primary">1</button>
+            <button type="button" id="next-page" class="btn btn-sm btn-warning font-weight-bold">下一页</button>
+        </div>
+    </div>
+    <footer>
+        <ul class="learn-more footer-ul">
+            <li class="white little footer-title">LEARN MORE</li>
+            <li><a class="gray little" href="index.html">如何服务</a></li> 
+            <li><a class="gray little" href="index.html">使用技巧</a></li>
+            <li><a class="gray little" href="index.html">联系方式</a></li>
+        </ul>
+        <ul class="learn-more footer-ul">
+            <li><p class="white little footer-title">ABOUT US</p></li>
+            <li><a class="gray little" href="index.html">关于我们</a></li> 
+            <li><a class="gray little" href="index.html">特性</a></li>
+            <li><a class="gray little" href="index.html">使用情景</a></li>
+        </ul>
+        <ul class="learn-more footer-ul">
+            <li><p class="white little footer-title">SUPPORT</p></li>
+            <li><a class="gray little" href="index.html">问答</a></li> 
+            <li><a class="gray little" href="index.html">联系我们</a></li>
+            <li><a class="gray little" href="index.html">联系地址</a></li>
+        </ul>
+        <div>
+            <p class="white little footer-title">ENJOY YOUR LIFE</p>
+            <ul class="footer-icons">
+                <li><a href="https://www.linkedin.com"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-tencent-weibo" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+    <script>
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+        });
+        var $name = '{{ name }}';
+    </script>
+</html>
+
+            <!-- <li>
+                <div class="pic">
+                    <a onclick="" target="_blank">
+                        <img src="{% static "seller/images/daxuecheng.jpg" %}" alt="大学城夜市">
+                    </a> 
+                </div>
+                <div class="txt">
+                    <div class="tit">
+                        <a onclick="" target="_blank">
+                            <h4>大学城夜市</h4>
+                        </a>
+                    </div>
+                    <div class="comment">
+                        <div class="nebula_star">
+                            <div class="star_icon">
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_half"></span>
+                            </div>
+                            <div class="star_score">4.71</div>
+                        </div>
+                    </div>
+                    <div class="tag">简要介绍
+                        <em class="sep">|</em>
+                        <span class="tag-intro">人流量大 营业时间长</span>
+                    </div>
+                    <div class="tag">具体地址
+                        <em class="sep">|</em>
+                        <span class="tag-addr">日照市大学城附近</span>
+                    </div>
+                    <div class="tag">联系方式
+                        <em class="sep">|</em>
+                        <span class="tag-phone">15662699817</span>
+                    </div>
+                </div>
+                <div class="right-txt">
+                    <div class="tag">摊位容量
+                        <em class="sep">|</em>
+                        <span class="tag-capacity tag-serious">80</span>
+                        <em class="percent">|</em>
+                        <span class="tag-capacity tag-serious">200</span>
+                    <div class="tag">经营类别
+                        <em class="sep">|</em>
+                        <span class="tag-category">美食、果蔬</span>
+                    </div>
+                </div>
+            </li> -->

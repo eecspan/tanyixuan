@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* background-color: peru; */
+    background-color: goldenrod;
+}
+
+.box {
+    padding-top: 63.6px;
+    width: 100%;
+}
+
+#create-booth {
+    background-color: seagreen;   
+}
+
+.container {
+    background-color: oldlace;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.open-booth, .close-booth {
+    width: 520px;
+}
+
+.open-title, .close-title {
+    padding: 3px 0 ;
+    border-radius: 8px;
+    margin: 10px auto;
+    width: 150px;
+    text-align: center;
+    font-weight: 500;
+    color: darkslategrey;
+}
+
+.open-title {
+    background-color: lightgreen;
+}
+
+.close-title {
+    background-color: navajowhite;
+}
+
+.open-booth .card-body {
+    background-color: lightgreen;
+}
+
+.close-booth .card-body {
+    background-color: navajowhite;
+}
+
+.tag {
+    line-height: 24px;
+}
+
+.sep {
+    margin: 0 5px;
+    font-style: normal;
+}
