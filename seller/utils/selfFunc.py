@@ -9,9 +9,14 @@ def db_get_market(pageNo, pageSize, sortItem, category, searchItem):
     # if sortItem == "dis":
 
     pageBegin = (int(pageNo)-1)*int(pageSize)  # 起始项  为了分页
+    category_radio = '%' + category + '%'  # 为了得到特定类别的摆摊地点
+    search_item = '%' + searchItem + '%'  # 为了得到名称中符合条件的摆摊地点
+
     sql = "select id, name, address, introduction, current_capacity, capacity, category, phone_number, " \
           "(select url from pic_urls where category = \"market\" and id = market.id limit 0, 1) pic_url from market " \
-          "limit {pageBegin}, {pageSize};".format(pageBegin=pageBegin, pageSize=pageSize)
+          "where current_capacity > 0 and category like \"{radio}\" and " \
+          "(name like \"{search_item}\" or address like \"{search_item}\") limit {pageBegin}, {pageSize};"\
+           .format(search_item=search_item, radio=category_radio, pageBegin=pageBegin, pageSize=pageSize)
     cursor.execute(sql)
     market_list = dictfetchall(cursor)
     cursor.close()
@@ -97,9 +102,18 @@ def db_close_booth(market_id, booth_name, user_name):
             .format(booth_name=booth_name, user_name=user_name)
         try:
             cursor.execute(sql)
-            # 成功了就提交
-            conn.commit()
-            result = {"success": "true"}
+            # 将摆摊地点的可容纳摊位数量+1
+            sql = "update market set current_capacity = current_capacity + 1 " \
+                  "where id={market_id};".format(market_id=market_id)
+            try:
+                cursor.execute(sql)
+                # 成功了就提交
+                conn.commit()
+                result = {"success": "true"}
+            except:
+                # 回退
+                conn.rollback()
+                result = {"success": "false"}
         except:
             # 回退
             conn.rollback()
@@ -133,12 +147,20 @@ def db_open_booth(market_id, booth_name, user_name):
             .format(booth_name=booth_name, user_name=user_name)
         try:
             cursor.execute(sql)
-            # 成功了就提交
-            conn.commit()
-            result = {"success": "true"}
+            # 将摆摊地点的可容纳摊位数量-1
+            sql = "update market set current_capacity = current_capacity - 1 " \
+                  "where id={market_id};".format(market_id=market_id)
+            try:
+                cursor.execute(sql)
+                # 成功了就提交
+                conn.commit()
+                result = {"success": "true"}
+            except:
+                # 回退
+                conn.rollback()
+                result = {"success": "false"}
         except:
             # 回退
-            conn.rollback()
             conn.rollback()
             result = {"success": "false"}
     except:

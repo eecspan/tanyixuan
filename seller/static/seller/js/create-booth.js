@@ -64,7 +64,7 @@ $(document).ready(function () {
             {
                 var $allInvalid = true;
                 $.each($checkBoxes, function (indexInArray, checkBox) {
-                    // 如果还有选中的，直接终值函数 
+                    // 如果还有选中的，直接中止函数 
                     if ($(checkBox).prop("checked"))
                     {
                         $allInvalid = false;

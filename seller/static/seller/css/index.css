@@ -6,7 +6,7 @@
 
 body {
     height: 100%;
-    padding-top: 63.6px;
+    margin-top: 68px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -27,6 +27,14 @@ body {
 
 .logout {
     margin-left: 20px;
+}
+
+.category-radio {
+    margin-top: 15px;
+}
+
+.category-radio .btn {
+    margin: 0px 13px;
 }
 
 .market-list {

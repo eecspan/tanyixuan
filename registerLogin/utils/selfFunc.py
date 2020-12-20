@@ -1,5 +1,6 @@
 import MySQLdb
 
+
 def db_login(identity, user_name, password):
     conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
                            database='tanyixuan', charset='utf8')
