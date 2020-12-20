@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="55f8e151-f8c3-46de-9470-d3d3eee006fa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registerLogin/utils/selfFunc.py" beforeDir="false" afterPath="$PROJECT_DIR$/registerLogin/utils/selfFunc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/static/seller/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/seller/static/seller/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/static/seller/js/create-booth.js" beforeDir="false" afterPath="$PROJECT_DIR$/seller/static/seller/js/create-booth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/static/seller/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/seller/static/seller/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/templates/seller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/seller/templates/seller/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/utils/selfFunc.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/utils/selfFunc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/booth/传传眼睛屋0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/booth/传传眼睛屋1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seller/static/seller/css/market-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/seller/static/seller/css/market-detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seller/templates/seller/market-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/seller/templates/seller/market-detail.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +34,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seller/templates/seller/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+            <state relative-caret-position="190">
+              <caret line="16" column="69" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seller/static/seller/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" selection-start-line="6" selection-end-line="15" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -50,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/seller/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
-              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+              <caret line="45" column="44" lean-forward="true" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -58,14 +61,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seller/utils/selfFunc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="798">
+              <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seller/templates/seller/market-detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="65" column="58" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/seller/static/seller/css/market-detail.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="36" selection-start-line="36" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -116,7 +137,6 @@
         <option value="$PROJECT_DIR$/seller/static/seller/js/my-booth.js" />
         <option value="$PROJECT_DIR$/seller/static/seller/css/market_detail.css" />
         <option value="$PROJECT_DIR$/seller/static/seller/js/market-detail.js" />
-        <option value="$PROJECT_DIR$/seller/templates/seller/market-detail.html" />
         <option value="$PROJECT_DIR$/registerLogin/views.py" />
         <option value="$PROJECT_DIR$/seller/templates/seller/create-booth.html" />
         <option value="$PROJECT_DIR$/seller/static/seller/css/create-booth.css" />
@@ -131,14 +151,16 @@
         <option value="$PROJECT_DIR$/registerLogin/utils/selfFunc.py" />
         <option value="$PROJECT_DIR$/seller/static/seller/js/index.js" />
         <option value="$PROJECT_DIR$/seller/utils/selfFunc.py" />
+        <option value="$PROJECT_DIR$/seller/templates/seller/market-detail.html" />
+        <option value="$PROJECT_DIR$/seller/static/seller/css/market-detail.css" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-34" />
-    <option name="y" value="92" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="132" />
+    <option name="y" value="36" />
     <option name="width" value="1658" />
-    <option name="height" value="960" />
+    <option name="height" value="1033" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -162,7 +184,35 @@
               <item name="tanyixuan" type="b2602c69:ProjectViewProjectNode" />
               <item name="tanyixuan" type="462c0819:PsiDirectoryNode" />
               <item name="seller" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tanyixuan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tanyixuan" type="462c0819:PsiDirectoryNode" />
+              <item name="seller" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="seller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tanyixuan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tanyixuan" type="462c0819:PsiDirectoryNode" />
+              <item name="seller" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="seller" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tanyixuan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tanyixuan" type="462c0819:PsiDirectoryNode" />
+              <item name="seller" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tanyixuan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tanyixuan" type="462c0819:PsiDirectoryNode" />
+              <item name="seller" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="seller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -277,18 +327,26 @@
       <workItem from="1608136510894" duration="2000" />
       <workItem from="1608279281160" duration="1292000" />
       <workItem from="1608398253726" duration="1436000" />
-      <workItem from="1608433648890" duration="6663000" />
+      <workItem from="1608433648890" duration="9083000" />
     </task>
+    <task id="LOCAL-00001" summary="潘煜东修改摊主index页面逻辑">
+      <created>1608446893850</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608446893850</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157527000" />
+    <option name="totallyTimeSpent" value="159947000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="106" y="29" width="1326" height="826" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.230563" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27129337" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -301,8 +359,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33427763" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067025" side_tool="true" weight="0.33427763" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49932975" weight="0.2204611" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -336,6 +394,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="潘煜东修改摊主index页面逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="潘煜东修改摊主index页面逻辑" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/manage.py">
@@ -430,9 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seller/static/seller/css/market-detail.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/seller/static/seller/js/my-booth.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -520,13 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seller/static/seller/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seller/static/seller/css/my-booth.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -571,13 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seller/templates/seller/market-detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="52" column="106" selection-start-line="52" selection-start-column="106" selection-end-line="52" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seller/static/seller/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1482">
@@ -590,15 +635,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/seller/templates/seller/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+        <state relative-caret-position="190">
+          <caret line="16" column="69" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/static/seller/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="15" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/seller/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <caret line="45" column="44" lean-forward="true" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
@@ -607,11 +659,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/seller/utils/selfFunc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="798">
+          <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/templates/seller/market-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="65" column="58" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/static/seller/css/market-detail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="36" selection-start-line="36" selection-end-line="37" />
         </state>
       </provider>
     </entry>

@@ -13,7 +13,7 @@
     <script src="{% static "seller/js/market-detail.js" %}"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top">
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <a class="navbar-brand" href="/seller/market-detail/{{ market_id }}/">摆摊地点详情</a>
           <ul class="navbar-nav mt-2 mt-lg-0">
@@ -59,8 +59,58 @@
                 </div>
             </div>
         </div>
+
+        <button type="button" id="start-booth" class="btn btn-warning btn-lg font-weight-bold">我要摆摊！</button>
+        
+        <div class="alert alert-primary detail" role="alert">
+            <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
+                摆摊地点名称：
+            </div>
+            <div class="alert alert-secondary detail-content font-weight-bold" role="alert">
+                {{ market_detail.name }}
+            </div>
+        </div>
+        <div class="alert alert-primary detail" role="alert">
+            <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
+                摊位总容量：{{ market_detail.capacity }}
+            </div>
+            <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
+                摊位剩余容量：{{ market_detail.current_capacity }}
+            </div>
+        </div>
+        <div class="alert alert-primary detail" role="alert">
+            <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
+                地址：
+            </div>
+            <div class="alert alert-secondary detail-content font-weight-bold" role="alert">
+                {{ market_detail.address }}
+            </div>
+        </div>
+        <div class="alert alert-primary detail" role="alert">
+            <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
+                简介：
+            </div>
+            <div class="alert alert-secondary detail-content font-weight-bold" role="alert">
+                {{ market_detail.introduction }}
+            </div>
+        </div>
+        <div class="alert alert-primary detail" role="alert">
+            <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
+                允许经营类别：
+            </div>
+            <div class="alert alert-secondary detail-content font-weight-bold" role="alert">
+                {{ market_detail.category }}
+            </div>
+        </div>
+        <div class="alert alert-primary detail" role="alert">
+            <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
+                联系方式：
+            </div>
+            <div class="alert alert-secondary detail-content font-weight-bold" role="alert">
+                {{ market_detail.phone_number }}
+            </div>
+        </div>
     </div>
-    <button type="button" id="start-booth" class="btn btn-warning">我要摆摊！</button>
 </body>
 <script>
     $.ajaxSetup({
