@@ -33,7 +33,7 @@
         </button> 
         </div>
     </nav>
-    <h1>这里是创建摊铺页面</h1>
+{#    <h1>这里是创建摊铺页面</h1>#}
 
     <form class="was-validated form-body" action="/seller/create-booth/" method="POST" enctype="multipart/form-data" onsubmit="return name_repeat()">
         {% csrf_token %}
@@ -85,7 +85,7 @@
             <label class="custom-file-label" for="booth-pics">未上传图片将使用默认图片！</label>
         </div>
 
-        <button type="submit" class="btn btn-primary" id="btn-submit">
+        <button type="submit" class="btn btn-primary btn-lg" id="btn-submit">
             提交！
         </button>
     </form>

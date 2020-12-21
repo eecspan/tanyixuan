@@ -27,8 +27,8 @@
           <button type="button" class="btn btn-warning btn-lg logout ml-auto">退出</button>
         </div>
     </nav>
-    <h1>{{ market_detail.id }}</h1>
-    <h1>{{ market_detail.name }}</h1>
+{#    <h1>{{ market_detail.id }}</h1>#}
+{#    <h1>{{ market_detail.name }}</h1>#}
     <div class="market-detail">
         <div class="container-fluid">
             <div class="row">
@@ -66,15 +66,15 @@
             <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
                 摆摊地点名称：
             </div>
-            <div class="alert alert-secondary detail-content font-weight-bold" role="alert">
+            <div class="alert alert-warning detail-content font-weight-bold" role="alert">
                 {{ market_detail.name }}
             </div>
         </div>
         <div class="alert alert-primary detail" role="alert">
-            <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
+            <div class="alert alert-success detail-title font-weight-bold" role="alert">
                 摊位总容量：{{ market_detail.capacity }}
             </div>
-            <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
+            <div class="alert alert-danger detail-title font-weight-bold" role="alert">
                 摊位剩余容量：{{ market_detail.current_capacity }}
             </div>
         </div>
@@ -82,7 +82,7 @@
             <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
                 地址：
             </div>
-            <div class="alert alert-secondary detail-content font-weight-bold" role="alert">
+            <div class="alert alert-warning detail-content font-weight-bold" role="alert">
                 {{ market_detail.address }}
             </div>
         </div>
@@ -90,7 +90,7 @@
             <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
                 简介：
             </div>
-            <div class="alert alert-secondary detail-content font-weight-bold" role="alert">
+            <div class="alert alert-warning detail-content font-weight-bold" role="alert">
                 {{ market_detail.introduction }}
             </div>
         </div>
@@ -98,7 +98,7 @@
             <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
                 允许经营类别：
             </div>
-            <div class="alert alert-secondary detail-content font-weight-bold" role="alert">
+            <div class="alert alert-warning detail-content font-weight-bold" role="alert">
                 {{ market_detail.category }}
             </div>
         </div>
@@ -106,7 +106,7 @@
             <div class="alert alert-secondary detail-title font-weight-bold" role="alert">
                 联系方式：
             </div>
-            <div class="alert alert-secondary detail-content font-weight-bold" role="alert">
+            <div class="alert alert-warning detail-content font-weight-bold" role="alert">
                 {{ market_detail.phone_number }}
             </div>
         </div>

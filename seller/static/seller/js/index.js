@@ -15,7 +15,7 @@ function get_market(pageNo, pageSize, sortItem="dis", category=$category_item, s
         "sortItem": sortItem,
         "category": category,
         "searchItem": searchItem,
-    }
+    };
     $.ajax({
         type: "POST",
         url: "/seller/get-market/",
@@ -31,11 +31,14 @@ function get_market(pageNo, pageSize, sortItem="dis", category=$category_item, s
 // 处理返回的摆摊地点信息，让其展示在页面中
 function deal_market(response)
 {
-    // 删除原有的
-    $(".market-list-scroll").empty();
-
     if (response.success == "true")
     {
+        // 显示页码
+        $("#current-page").html($pageNo);
+
+        // 删除原有的
+        $(".market-list-scroll").empty();
+
         // 添加获取的
         $.each(response.marketList, function (indexInArray, market) { 
             var $marketHtml = 
@@ -92,6 +95,7 @@ function deal_market(response)
         });
 
         // 点击摆摊地点时，进入详情页面  要在这里添加函数
+        // 通过url传递market_id信息
         $(".market-list-scroll li").click(function () {
             var $market_id = $(this).attr("id");
             alert("点击了" + $market_id);
@@ -102,6 +106,9 @@ function deal_market(response)
     // 如果已经没有数据
     else
     {
+        // 页码要 -= 1
+        $pageNo -= 1;
+
         setTimeout(() => {
             alert("已加载全部数据！");
         }, 500);
@@ -155,6 +162,24 @@ $(document).ready(
             {
                 get_market($pageNo, $pageSize, "dis", $category_item, $search_item);
             }
-        })
+        });
+
+        // 点击下一页和上一页，能够跳转，并且显示最新页码
+        $("#next-page").click(() => {
+           $pageNo += 1;  // 页数 += 1
+            // 获取新数据并展示
+            get_market($pageNo, $pageSize, "dis", $category_item);
+        });
+
+        $("#pre-page").click(() => {
+            // 如果已经是第1页
+            if ($pageNo == 1)
+                alert("已经是第一页了！");
+            else{
+                $pageNo -= 1;  // 页数 -= 1
+            // 获取新数据并展示
+            get_market($pageNo, $pageSize, "dis", $category_item);
+            }
+        });
     }
 );

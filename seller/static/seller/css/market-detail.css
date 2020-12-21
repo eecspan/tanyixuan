@@ -6,6 +6,7 @@
 body {
     height: 100%;
     margin-top: 68px;
+    padding: 15px;
     width: 100%;
     background-color: darksalmon;
 }
@@ -21,12 +22,12 @@ body {
     min-width: 700px;
     margin: 0 auto;
     border-radius: 10px;
-    background-color: white;
+    background-color: azure;
     padding: 10px;
 }
 
 #start-booth {
-    margin: 5px 0;
+    margin: 20px 0;
     width: 100%;
 }
 
