@@ -2,21 +2,40 @@ import MySQLdb
 from utils.selfFunc import dictfetchall
 
 
-def db_get_market(pageNo, pageSize, sortItem, category, searchItem):
+def db_get_market(pageNo, pageSize, sortItem, category, sortBasis, searchItem):
     conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
                            database='tanyixuan', charset='utf8')
     cursor = conn.cursor()
-    # if sortItem == "dis":
 
     pageBegin = (int(pageNo)-1)*int(pageSize)  # 起始项  为了分页
     category_radio = '%' + category + '%'  # 为了得到特定类别的摆摊地点
     search_item = '%' + searchItem + '%'  # 为了得到名称中符合条件的摆摊地点
 
-    sql = "select id, name, address, introduction, current_capacity, capacity, category, phone_number, " \
+    # 按照评分
+    if sortItem == "mark":
+        sql = "select id, name, address, introduction, current_capacity, capacity, category, phone_number, mark, " \
+          "(select url from pic_urls where category = \"market\" and id = market.id limit 0, 1) pic_url from market " \
+          "where current_capacity > 0 and category like \"{radio}\" and " \
+          "(name like \"{search_item}\" or address like \"{search_item}\") order by mark {sortBasis} limit {pageBegin}, {pageSize};"\
+           .format(search_item=search_item, radio=category_radio, pageBegin=pageBegin,
+                   pageSize=pageSize, sortBasis=sortBasis)
+    # 按照默认排序
+    elif sortItem == "":
+        sql = "select id, name, address, introduction, current_capacity, capacity, category, phone_number, mark, " \
           "(select url from pic_urls where category = \"market\" and id = market.id limit 0, 1) pic_url from market " \
           "where current_capacity > 0 and category like \"{radio}\" and " \
           "(name like \"{search_item}\" or address like \"{search_item}\") limit {pageBegin}, {pageSize};"\
            .format(search_item=search_item, radio=category_radio, pageBegin=pageBegin, pageSize=pageSize)
+    # 按照地理位置
+    else:
+        sql = "select id, name, address, introduction, current_capacity, capacity, category, phone_number, mark, " \
+              "(select url from pic_urls where category = \"market\" and id = market.id limit 0, 1) pic_url from market " \
+              "where current_capacity > 0 and category like \"{radio}\" and " \
+              "(name like \"{search_item}\" or address like \"{search_item}\") order by " \
+              "power({latitude} - area_northwest_latitude, 2) + power({longtitude} - area_northwest_longitude, 2) {sortBasis} " \
+              "limit {pageBegin}, {pageSize};" \
+            .format(search_item=search_item, radio=category_radio, latitude=sortItem[0], longtitude=sortItem[1],
+                    pageBegin=pageBegin, pageSize=pageSize, sortBasis=sortBasis)
     cursor.execute(sql)
     market_list = dictfetchall(cursor)
     cursor.close()

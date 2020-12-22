@@ -41,11 +41,18 @@
         <label class="btn btn-success" id="entertainment">娱乐</label>
     </div>
     <div class="market-list">
-        <div class="filter-box btn-group" role="group" aria-label="Basic example">
-            <button type="button" id="default-btn" class="btn btn-secondary bg-warning">默认排序</button>
-            <button type="button" id="dis-btn" class="btn btn-secondary">距离优先</button>
-            <button type="button" id="rank-btn" class="btn btn-secondary">好评优先</button>
+        <div class="btns">
+            <div class="sort-btns btn-group" role="group" aria-label="Basic example">
+                <button type="button" id="default-btn" class="btn btn-secondary bg-warning">默认排序</button>
+                <button type="button" id="dis-btn" class="btn btn-secondary">距离优先</button>
+                <button type="button" id="rank-btn" class="btn btn-secondary">好评优先</button>
+            </div>
+            <div class="basis-btns btn-group" role="group" aria-label="Basic example">
+                <button type="button" id="asc-btn" class="btn btn-secondary bg-warning">升序</button>
+                <button type="button" id="desc-btn" class="btn btn-secondary">降序</button>
+            </div>
         </div>
+
 
         <ul class="market-list-scroll">
             <!-- 这里展示商品的li -->

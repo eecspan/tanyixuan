@@ -22,7 +22,13 @@ def get_market(request):
     sortItem = request.POST.get("sortItem")
     category = request.POST.get("category")
     searchItem = request.POST.get("searchItem")
-    market_list = db_get_market(pageNo, pageSize, sortItem, category, searchItem)
+    sortBasis = request.POST.get("sortBasis")
+
+    # 距离排序，接收经纬度
+    if sortItem != "" and sortItem != "mark":
+        sortItem = request.POST.getlist("sortItem")
+
+    market_list = db_get_market(pageNo, pageSize, sortItem, category, sortBasis, searchItem)
     response = {}  # 用于返回结果
     if len(market_list) == 0:
         response["success"] = "false"

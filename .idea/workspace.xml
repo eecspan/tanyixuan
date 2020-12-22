@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="55f8e151-f8c3-46de-9470-d3d3eee006fa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/static/seller/css/create-booth.css" beforeDir="false" afterPath="$PROJECT_DIR$/seller/static/seller/css/create-booth.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/static/seller/css/market-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/seller/static/seller/css/market-detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/static/seller/css/my-booth.css" beforeDir="false" afterPath="$PROJECT_DIR$/seller/static/seller/css/my-booth.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seller/static/seller/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/seller/static/seller/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/templates/seller/create-booth.html" beforeDir="false" afterPath="$PROJECT_DIR$/seller/templates/seller/create-booth.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seller/templates/seller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/seller/templates/seller/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/templates/seller/market-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/seller/templates/seller/market-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seller/utils/selfFunc.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/utils/selfFunc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seller/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,44 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seller/templates/seller/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="55" column="83" lean-forward="true" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="83" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seller/templates/seller/create-booth.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="87" column="59" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seller/static/seller/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seller/static/seller/css/my-booth.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seller/static/seller/css/create-booth.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="-1596">
+              <caret line="51" column="89" lean-forward="true" selection-start-line="51" selection-start-column="89" selection-end-line="51" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -84,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/seller/static/seller/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+            <state relative-caret-position="331">
+              <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -94,19 +55,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seller/static/seller/css/market-detail.css">
+        <entry file="file://$PROJECT_DIR$/seller/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="570">
+              <caret line="30" column="81" selection-start-line="30" selection-start-column="81" selection-end-line="30" selection-end-column="81" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seller/static/seller/js/market-detail.js">
+        <entry file="file://$PROJECT_DIR$/seller/utils/selfFunc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+            <state relative-caret-position="266">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,25 +129,25 @@
         <option value="$PROJECT_DIR$/seller/urls.py" />
         <option value="$PROJECT_DIR$/tanyixuan/urls.py" />
         <option value="$PROJECT_DIR$/seller/templates/seller/my-booth.html" />
-        <option value="$PROJECT_DIR$/seller/views.py" />
         <option value="$PROJECT_DIR$/seller/static/seller/css/index.css" />
         <option value="$PROJECT_DIR$/registerLogin/utils/selfFunc.py" />
-        <option value="$PROJECT_DIR$/seller/utils/selfFunc.py" />
         <option value="$PROJECT_DIR$/seller/templates/seller/market-detail.html" />
         <option value="$PROJECT_DIR$/seller/static/seller/css/market-detail.css" />
         <option value="$PROJECT_DIR$/seller/templates/seller/create-booth.html" />
         <option value="$PROJECT_DIR$/seller/static/seller/css/create-booth.css" />
         <option value="$PROJECT_DIR$/seller/static/seller/css/my-booth.css" />
         <option value="$PROJECT_DIR$/seller/templates/seller/index.html" />
+        <option value="$PROJECT_DIR$/seller/views.py" />
+        <option value="$PROJECT_DIR$/seller/utils/selfFunc.py" />
         <option value="$PROJECT_DIR$/seller/static/seller/js/index.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="107" />
-    <option name="y" value="51" />
+    <option name="x" value="110" />
+    <option name="y" value="71" />
     <option name="width" value="1585" />
-    <option name="height" value="972" />
+    <option name="height" value="983" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -242,6 +209,12 @@
               <item name="seller" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="seller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tanyixuan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tanyixuan" type="462c0819:PsiDirectoryNode" />
+              <item name="seller" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -358,7 +331,9 @@
       <workItem from="1608433648890" duration="9101000" />
       <workItem from="1608474106158" duration="735000" />
       <workItem from="1608485780093" duration="668000" />
-      <workItem from="1608522072929" duration="3358000" />
+      <workItem from="1608522072929" duration="3525000" />
+      <workItem from="1608595819934" duration="6794000" />
+      <workItem from="1608603760484" duration="3184000" />
     </task>
     <task id="LOCAL-00001" summary="潘煜东修改摊主index页面逻辑">
       <created>1608446893850</created>
@@ -374,17 +349,24 @@
       <option name="project" value="LOCAL" />
       <updated>1608449266307</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="潘煜东修改摊主index分页逻辑">
+      <created>1608531953814</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608531953814</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164726000" />
+    <option name="totallyTimeSpent" value="174871000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="86" y="41" width="1268" height="777" extended-state="0" />
+    <frame x="88" y="57" width="1268" height="786" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29834712" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30826446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -398,7 +380,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067025" side_tool="true" weight="0.33427763" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49932975" visible="true" weight="0.2372093" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49932975" visible="true" weight="0.23394495" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -436,7 +418,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="潘煜东修改摊主index页面逻辑" />
     <MESSAGE value="潘煜东修改摊主market-detail页面逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="潘煜东修改摊主market-detail页面逻辑" />
+    <MESSAGE value="潘煜东修改摊主index分页逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="潘煜东修改摊主index分页逻辑" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/manage.py">
@@ -628,72 +611,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seller/utils/selfFunc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seller/templates/seller/market-detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/templates/seller/create-booth.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="87" column="59" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/static/seller/css/create-booth.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/static/seller/css/my-booth.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/static/seller/css/market-detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/static/seller/js/market-detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="34" column="38" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/templates/seller/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="55" column="83" lean-forward="true" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="83" />
         </state>
       </provider>
     </entry>
@@ -707,17 +628,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/seller/templates/seller/create-booth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1653">
+          <caret line="87" column="59" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/seller/static/seller/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
-          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/static/seller/css/my-booth.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/static/seller/css/create-booth.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/static/seller/css/market-detail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/static/seller/js/market-detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/templates/seller/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1596">
+          <caret line="51" column="89" lean-forward="true" selection-start-line="51" selection-start-column="89" selection-end-line="51" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/utils/selfFunc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="81" selection-start-line="30" selection-start-column="81" selection-end-line="30" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/seller/static/seller/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+        <state relative-caret-position="331">
+          <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
