@@ -85,8 +85,8 @@ DATABASES = {
         'NAME': 'tanyixuan',
         'USER': 'tanyixuanU',
         'PASSWORD': 'tanyixuan1904',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'HOST': '36t27o3263.wicp.vip',
+        'PORT': '18486',
     }
 }
 
