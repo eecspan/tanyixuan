@@ -37,6 +37,7 @@ def db_get_market(pageNo, pageSize, sortItem, category, sortBasis, searchItem):
             .format(search_item=search_item, radio=category_radio, latitude=sortItem[0], longtitude=sortItem[1],
                     pageBegin=pageBegin, pageSize=pageSize, sortBasis=sortBasis)
     cursor.execute(sql)
+    print(sql)
     market_list = dictfetchall(cursor)
     cursor.close()
     conn.close()

@@ -17,3 +17,7 @@ body {
     border-radius: 10px;
     background-color: azure;
 }
+
+#latitude, #longitude {
+    display: none;
+}

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static "manager/css/create-market.css" %}">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="{% static "manager/js/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=EQkEBHVm7xgaqd6dngaCVwFe3nKcsqAA"></script>
     <script type="text/javascript" src="{% static "manager/js/create-market.js" %}"></script>
 </head>
 <body>
@@ -81,15 +82,23 @@
 
         <div class="mb-3">
             <label>市场容量</label>
-            <textarea class="form-control is-invalid" id="market-capacity" placeholder="请输入您的市场容量！" name="market-capacity" required></textarea>
+            <input onkeyup="this.value=this.value.replace(/\D/g,'')" class="form-control is-invalid" id="market-capacity" placeholder="请输入您的市场容量！" name="market-capacity" required>
             <div class="invalid-feedback">
                 您还未输入市场容量！
             </div>
         </div>
 
         <div class="mb-3">
+            <label>地图选点</label>
+            <input id="latitude" name="latitude">
+            <input id="longitude" name="longitude">
+        </div>
+
+        <div class="mb-3" id="allmap" style="width: 80%;height: 360px; margin-left: auto; margin-right: auto"></div>
+
+        <div class="mb-3">
             <label>市场地址</label>
-            <textarea class="form-control is-invalid" id="market-address" placeholder="请输入您的市场地址！" name="market-address" required></textarea>
+            <input class="form-control is-invalid" id="market-address" placeholder="请输入您的市场地址！" name="market-address" required>
             <div class="invalid-feedback">
                 您还未输入市场地址！
             </div>
@@ -97,7 +106,7 @@
 
         <div class="mb-3">
             <label>联系方式</label>
-            <textarea class="form-control is-invalid" id="market-phone-number" placeholder="请输入您的联系方式！" name="market-phone-number" required></textarea>
+            <input onkeyup="this.value=this.value.replace(/\D/g,'')" class="form-control is-invalid" id="market-phone-number" placeholder="请输入您的联系方式！" name="market-phone-number" required>
             <div class="invalid-feedback">
                 您还未输入联系方式！
             </div>

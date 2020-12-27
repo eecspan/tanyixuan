@@ -53,7 +53,7 @@ $(document).ready(function () {
             // 并且将最后的警示取消
             if ($(checkBox).prop("checked"))
             {
-                console.log("选中了！")
+                // console.log("选中了！");
                 // 移除required属性 
                 $.each($checkBoxes, function (indexInArray, checkBox) { 
                     $(checkBox).removeAttr("required");
@@ -75,7 +75,7 @@ $(document).ready(function () {
                 if (!$allInvalid)
                     return;
                 // 如果都取消了
-                console.log("都取消了");
+                // console.log("都取消了");
                 $.each($checkBoxes, function (indexInArray, checkBox) { 
                     $(checkBox).attr("required", true);
                 });

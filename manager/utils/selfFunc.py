@@ -44,7 +44,7 @@ def db_create_pic_url(id, category, pic_urls):
 
 
 def db_create_market(user_name, market_name, market_category, market_introduction, market_address, market_capacity,
-                     market_phone_number):
+                     market_phone_number, longitude, latitude):
     conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
                            database='tanyixuan', charset='utf8', port=18486)
     cursor = conn.cursor()
@@ -67,16 +67,16 @@ def db_create_market(user_name, market_name, market_category, market_introductio
           "\"{mark}\");".format(market_name=market_name,
                                 address=market_address,
                                 intro=market_introduction,
-                                longitude=1,
-                                latitude=1,
+                                longitude=longitude,
+                                latitude=latitude,
                                 east_dis=1,
                                 south_dis=1,
                                 cap=market_capacity,
                                 categoty=market_category,
                                 phone_number=market_phone_number,
-                                current_cap=0,
+                                current_cap=market_capacity,
                                 user_name=user_name,
-                                mark=5)
+                                mark=0)
     print(sql)
     try:
         cursor.execute(sql)

@@ -59,10 +59,12 @@ def create_market(request):
         market_address = request.POST.get("market-address")
         market_phone_number = request.POST.get("market-phone-number")
         market_capacity = request.POST.get("market-capacity")
+        longitude = request.POST.get("longitude")
+        latitude = request.POST.get("latitude")
 
         # 将这些信息存入数据库
         result = db_create_market(user_name, market_name, market_category, market_introduction, market_address,
-                                  market_capacity, market_phone_number)
+                                  market_capacity, market_phone_number, longitude, latitude)
         # 如果摊铺创建成功
         if result['success'] == 'true':
             market_pics = request.FILES.getlist("market-pics", None)
