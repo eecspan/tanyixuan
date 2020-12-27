@@ -2,8 +2,8 @@ import MySQLdb
 
 
 def db_login(identity, user_name, password):
-    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8')
+    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=18486)
     cursor = conn.cursor()
     # 如果身份是消费者
     if identity == "consumer":
@@ -36,8 +36,8 @@ def db_login(identity, user_name, password):
 
 def db_register(request_values):
     response = {'identity': request_values['identity']}  # 用于返回数据
-    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8')
+    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=18486)
     cursor = conn.cursor()
     # 身份是消费者
     if request_values['identity'] == "consumer":

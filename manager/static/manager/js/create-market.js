@@ -1,13 +1,13 @@
 function name_repeat()
 {
     var $result = false;
-    $booth_name = $("#booth-name").val();
+    $market_name = $("#market-name").val();
     $.ajax({
         async: false,    //设置为同步
         type: "POST",
-        url: "/seller/check-booth-reapeat/",
+        url: "/manager/check-market-repeat/",
         data: {
-            "booth-name": $booth_name
+            "market-name": $market_name
         },
         dataType: "json",
         success: function (response) {
@@ -18,7 +18,7 @@ function name_repeat()
         }
     });
     if ($result == false)
-        alert("摊铺名称重复，请更换名称！");
+        alert("市场名称重复，请更换名称！");
 
     return $result;
 }
@@ -31,8 +31,8 @@ $(document).ready(function () {
         window.location.assign("/logout/");  // 退出登录
     });
 
-    // 当输入了摊铺名称，将提示信息删去
-    $("#booth-name").bind("input propertychange", function () {
+    // 当输入了市场名称，将提示信息删去
+    $("#market-name").bind("input propertychange", function () {
         var $invalid =  $(this).parents(".mb-3").children(".invalid-feedback");
         if ($(this).val() != "") {
             $invalid.css("display", "none");
@@ -83,8 +83,47 @@ $(document).ready(function () {
         });
     });
 
-    // 当输入了摊铺简介，就将提示信息删去
-    $("#booth-introduction").bind("input propertychange", function () {
+    // 当输入了市场简介，就将提示信息删去
+    $("#market-introduction").bind("input propertychange", function () {
+        var $invalid = $(this).next();
+        if ($(this).val() != "") {
+            $invalid.attr("class", "invalid-feedback");
+            $invalid.css("display", "none");
+        }
+        else
+        {
+            $invalid.attr("class", "invalid-feedback");
+            $invalid.css("display", "");
+        }
+    });
+
+    $("#market-address").bind("input propertychange", function () {
+        var $invalid = $(this).next();
+        if ($(this).val() != "") {
+            $invalid.attr("class", "invalid-feedback");
+            $invalid.css("display", "none");
+        }
+        else
+        {
+            $invalid.attr("class", "invalid-feedback");
+            $invalid.css("display", "");
+        }
+    });
+
+    $("#market-capacity").bind("input propertychange", function () {
+        var $invalid = $(this).next();
+        if ($(this).val() != "") {
+            $invalid.attr("class", "invalid-feedback");
+            $invalid.css("display", "none");
+        }
+        else
+        {
+            $invalid.attr("class", "invalid-feedback");
+            $invalid.css("display", "");
+        }
+    });
+
+    $("#market-phone-number").bind("input propertychange", function () {
         var $invalid = $(this).next();
         if ($(this).val() != "") {
             $invalid.attr("class", "invalid-feedback");
@@ -98,18 +137,18 @@ $(document).ready(function () {
     });
 
     // 如果选择了图片，显示图片路径
-    var $boothPic = $("#booth-pics");
-    var $boothPicLabel = $boothPic.next();
-    $boothPic.bind("input propertychange", function (e) {
-        $fileLength = $boothPic.prop("files").length;
+    var $marketPic = $("#market-pics");
+    var $marketPicLabel = $marketPic.next();
+    $marketPic.bind("input propertychange", function (e) {
+        $fileLength = $marketPic.prop("files").length;
         if ($fileLength == 0)
-            $boothPicLabel.html("选择一张或多张图片上传（未上传将使用默认图片）");
+            $marketPicLabel.html("选择一张或多张图片上传（未上传将使用默认图片）");
         else
         {
             $filename = "";
             for (let i = 0; i < $fileLength; ++i)
-                $filename += (' ' + $boothPic.prop("files")[i].name);
-            $boothPicLabel.html($filename);
+                $filename += (' ' + $marketPic.prop("files")[i].name);
+            $marketPicLabel.html($filename);
         }
     });
 });

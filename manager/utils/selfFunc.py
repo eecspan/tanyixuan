@@ -1,5 +1,5 @@
 import MySQLdb
-
+from utils.selfFunc import dictfetchall
 
 def db_check_market_repeat(user_name, market_name):
     conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
@@ -9,7 +9,11 @@ def db_check_market_repeat(user_name, market_name):
     # 先看看有没有重复的摊铺名称
     sql = "select id from market where name=\"{market_name}\" and manager_id=" \
           "(select id from manager where user_name=\"{user_name}\");".format(market_name=market_name,
-                                                                             user_name=user_name)
+                                                                     user_name=user_name)
+
+    print(user_name)
+    print(market_name)
+
     cursor.execute(sql)
     print(cursor.fetchone())
     if cursor.fetchone() is None:
@@ -39,7 +43,8 @@ def db_create_pic_url(id, category, pic_urls):
     conn.close()
 
 
-def db_create_market(user_name, market_name, market_category, market_introduction):
+def db_create_market(user_name, market_name, market_category, market_introduction, market_address, market_capacity,
+                     market_phone_number):
     conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
                            database='tanyixuan', charset='utf8', port=18486)
     cursor = conn.cursor()
@@ -53,17 +58,26 @@ def db_create_market(user_name, market_name, market_category, market_introductio
                                                     market_introduction=market_introduction)
     """
     sql = "insert into market" \
-          "name, address, introduction, area_northwest_longitude, area_northwest_latitude, east_dis, south_dis, " \
-          "capacity, category, phone_number, current_capacity, manager_id, mark" \
-          "values" \
+          "(name, address, introduction, area_northwest_longitude, area_northwest_latitude, east_dis, south_dis, " \
+          "capacity, category, phone_number, current_capacity, manager_id, mark)" \
+          "values " \
           "(\"{market_name}\", \"{address}\", \"{intro}\", \"{longitude}\", \"{latitude}\", \"{east_dis}\", " \
-          "\"{south_dis}\",\"{cap}\", \"{categoty}\", \"{phone_number}\" \"{current_cap}\"" \
+          "\"{south_dis}\",\"{cap}\", \"{categoty}\", \"{phone_number}\", \"{current_cap}\", "\
           "(select id from manager where user_name=\"{user_name}\"), " \
           "\"{mark}\");".format(market_name=market_name,
-                                address="XXX", intro=market_introduction, longitude=1, latitude=1, east_dis=1,
-                                south_dis=1,cap=999, categoty=market_category, phone_number=110, current_cap=0,
+                                address=market_address,
+                                intro=market_introduction,
+                                longitude=1,
+                                latitude=1,
+                                east_dis=1,
+                                south_dis=1,
+                                cap=market_capacity,
+                                categoty=market_category,
+                                phone_number=market_phone_number,
+                                current_cap=0,
                                 user_name=user_name,
                                 mark=5)
+    print(sql)
     try:
         cursor.execute(sql)
         # 成功了就提交
