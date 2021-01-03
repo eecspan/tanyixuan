@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    margin-top: 68px;
+    padding: 15px;
+    width: 100%;
+    background-color: darksalmon;
+}
+
+.logout {
+    margin-left: 50px;
+    float: right;
+}
+
+.market-detail {
+    height: 100%;
+    width: 700px;
+    min-width: 700px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: azure;
+    padding: 10px;
+}
+
+#start-booth {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.detail-title {
+    width: auto;
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+.detail-content {
+    flex-grow: 1;
+    margin-left: 5px;
+    margin-bottom: 0;
+}

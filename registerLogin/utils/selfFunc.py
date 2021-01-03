@@ -2,17 +2,17 @@ import MySQLdb
 
 
 def db_login(identity, user_name, password):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
     # 如果身份是消费者
     if identity == "consumer":
-        sql = "select nickname from {table_name} where user_name = \'{user_name}\';".format(
-            table_name=identity, user_name=user_name)
+        sql = "select nickname from {table_name} where user_name = \'{user_name}\';"\
+            .format(table_name=identity, user_name=user_name)
     # 如果身份是摊主或者管理者
     else:
-        sql = "select name from {table_name} where user_name = \'{user_name}\';".format(
-            table_name=identity, user_name=user_name)
+        sql = "select name from {table_name} where user_name = \'{user_name}\';"\
+            .format(table_name=identity, user_name=user_name)
     cursor.execute(sql)
     result = cursor.fetchone()  # 结果
     if result is not None:  # 如果存在这个user_name
@@ -34,14 +34,16 @@ def db_login(identity, user_name, password):
     # 不存在该用户，返回空 都返回result
     return result
 
+
 def db_register(request_values):
     response = {'identity': request_values['identity']}  # 用于返回数据
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
     # 身份是消费者
     if request_values['identity'] == "consumer":
-        sql = "select id from consumer where user_name = \"{user_name}\";".format(user_name=request_values['user_name'])
+        sql = "select id from consumer where user_name = \"{user_name}\";"\
+            .format(user_name=request_values['user_name'])
         cursor.execute(sql)
         user_id = cursor.fetchone()
 
@@ -52,9 +54,10 @@ def db_register(request_values):
         # 不存在id，说明可以注册
         else:
             sql = "INSERT INTO consumer (user_name, password, phone_number, nickname, user_icon) VALUES " \
-                  "(\"{user_name}\", \"{password}\", \"{phone_number}\", \"{nickname}\", \"{user_icon}\");".format(
-                user_name=request_values['user_name'], password=request_values['password'], phone_number=request_values['phone_number'],
-                nickname=request_values['nickname'], user_icon=request_values['user_icon'])
+                  "(\"{user_name}\", \"{password}\", \"{phone_number}\", \"{nickname}\", \"{user_icon}\");"\
+                .format(user_name=request_values['user_name'], password=request_values['password'],
+                        phone_number=request_values['phone_number'],nickname=request_values['nickname'],
+                        user_icon=request_values['user_icon'])
             cursor.execute(sql)
             conn.commit()  # 插入的 不要忘记commit
             cursor.close()
@@ -64,8 +67,8 @@ def db_register(request_values):
     # 身份是卖家或者管理者
     else:
         # 查看是否有相同的用户名
-        sql = "select id from {table_name} where user_name = \"{user_name}\";".format(
-            table_name=request_values['identity'], user_name=request_values['user_name'])
+        sql = "select id from {table_name} where user_name = \"{user_name}\";"\
+            .format(table_name=request_values['identity'], user_name=request_values['user_name'])
         print(sql)
         cursor.execute(sql)
         user_id = cursor.fetchone()

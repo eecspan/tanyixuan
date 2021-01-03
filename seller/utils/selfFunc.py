@@ -3,8 +3,8 @@ from utils.selfFunc import dictfetchall
 
 
 def db_get_market(pageNo, pageSize, sortItem, category, sortBasis, searchItem):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
 
     pageBegin = (int(pageNo)-1)*int(pageSize)  # 起始项  为了分页
@@ -16,7 +16,8 @@ def db_get_market(pageNo, pageSize, sortItem, category, sortBasis, searchItem):
         sql = "select id, name, address, introduction, current_capacity, capacity, category, phone_number, mark, " \
           "(select url from pic_urls where category = \"market\" and id = market.id limit 0, 1) pic_url from market " \
           "where current_capacity > 0 and category like \"{radio}\" and " \
-          "(name like \"{search_item}\" or address like \"{search_item}\") order by mark {sortBasis} limit {pageBegin}, {pageSize};"\
+          "(name like \"{search_item}\" or address like \"{search_item}\") order by mark {sortBasis} limit " \
+              "{pageBegin}, {pageSize};"\
            .format(search_item=search_item, radio=category_radio, pageBegin=pageBegin,
                    pageSize=pageSize, sortBasis=sortBasis)
     # 按照默认排序
@@ -32,8 +33,8 @@ def db_get_market(pageNo, pageSize, sortItem, category, sortBasis, searchItem):
               "(select url from pic_urls where category = \"market\" and id = market.id limit 0, 1) pic_url from market " \
               "where current_capacity > 0 and category like \"{radio}\" and " \
               "(name like \"{search_item}\" or address like \"{search_item}\") order by " \
-              "power({latitude} - area_northwest_latitude, 2) + power({longtitude} - area_northwest_longitude, 2) {sortBasis} " \
-              "limit {pageBegin}, {pageSize};" \
+              "power({latitude} - area_northwest_latitude, 2) + power({longtitude} - area_northwest_longitude, 2) " \
+              "{sortBasis} limit {pageBegin}, {pageSize};" \
             .format(search_item=search_item, radio=category_radio, latitude=sortItem[0], longtitude=sortItem[1],
                     pageBegin=pageBegin, pageSize=pageSize, sortBasis=sortBasis)
     cursor.execute(sql)
@@ -45,8 +46,8 @@ def db_get_market(pageNo, pageSize, sortItem, category, sortBasis, searchItem):
 
 
 def db_get_market_detail(market_id):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
     sql = "select id, name, address, introduction, current_capacity, capacity, category, phone_number " \
           "from market where id={market_id};".format(market_id=market_id)
@@ -68,8 +69,8 @@ def db_get_market_detail(market_id):
 
 
 def db_get_my_booth(user_name):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
 
     # 先找正在营业的
@@ -104,8 +105,8 @@ def db_get_my_booth(user_name):
 
 
 def db_close_booth(market_id, booth_name, user_name):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
 
     sql = "delete from business " \
@@ -149,8 +150,8 @@ def db_close_booth(market_id, booth_name, user_name):
 
 
 def db_open_booth(market_id, booth_name, user_name):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
     sql = "insert into business(booth_id, market_id, start_time) " \
     "values "\
@@ -195,8 +196,8 @@ def db_open_booth(market_id, booth_name, user_name):
 
 
 def db_delete_booth(booth_name, user_name):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
     sql = "select id from booth where name=\"{booth_name}\" and seller_id=" \
           "(select id from seller where user_name=\"{user_name}\");".format(booth_name=booth_name, user_name=user_name)
@@ -230,8 +231,8 @@ def db_delete_booth(booth_name, user_name):
 
 
 def db_check_booth_repeat(user_name, booth_name):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                              database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                              database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
 
     # 先看看有没有重复的摊铺名称
@@ -247,8 +248,8 @@ def db_check_booth_repeat(user_name, booth_name):
 
 
 def db_create_booth(user_name, booth_name, booth_category, booth_introduction):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
     sql = "insert into booth" \
             "(seller_id, name, introduction, category, location_longitude, location_latitude, status)" \
@@ -278,8 +279,8 @@ def db_create_booth(user_name, booth_name, booth_category, booth_introduction):
 
 # id是身份的id，category是类别，字符串类型
 def db_create_pic_url(id, category, pic_urls):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
 
     for url in pic_urls:
@@ -298,8 +299,8 @@ def db_create_pic_url(id, category, pic_urls):
 
 
 def db_delete_pic_url(id, category):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
 
     # 返回路径

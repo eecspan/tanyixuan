@@ -6,12 +6,309 @@
 <head>
     <meta charset="UTF-8">
     <title>消费者主页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "consumer/css/index.css" %}">
+
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="{% static "consumer/js/index.js" %}"></script>
 </head>
 <body>
-    <h1>这是消费者主页</h1>
-    <h2>欢迎你，{{ nickname }}!</h2>
-    <button id="logout"><a href="/logout/">退出登录</a></button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="/manager/index/">消费者主页</a>
+          <ul class="navbar-nav mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/manager/my-market/">我的消费</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/manager/my-info/">个人信息</a>
+            </li>
+              <!-- 测试 创建市场 -->
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="/manager/create-market/">添加市场</a>
+            </li> -->
+          </ul>
+          <div class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" placeholder="输入名称或地点名称" aria-label="Search" id="search-item">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="search-btn">搜索</button>
+          </div>
+          <button type="button" class="btn btn-warning btn-lg logout">退出</button>
+        </div>
+    </nav>
+
+    
+    <div class="btn-group-toggle category-radio">
+        <label class="btn btn-success active" id="all-category">全部类别</label>
+        <label class="btn btn-success" id="food">美食</label>
+        <label class="btn btn-success" id="clothing">服装</label>
+        <label class="btn btn-success" id="vegetable">果蔬</label>
+        <label class="btn btn-success" id="daily">日用</label>
+        <label class="btn btn-success" id="entertainment">娱乐</label>
+    </div>
+
+    <div class="market-list">
+        <div class="btns">
+            <div class="sort-btns btn-group" role="group" aria-label="Basic example">
+                <button type="button" id="default-btn" class="btn btn-secondary bg-warning">默认排序</button>
+                <button type="button" id="dis-btn" class="btn btn-secondary">距离优先</button>
+                <button type="button" id="rank-btn" class="btn btn-secondary">好评优先</button>
+            </div>
+            <div class="basis-btns btn-group" role="group" aria-label="Basic example">
+                <button type="button" id="asc-btn" class="btn btn-secondary bg-warning">升序</button>
+                <button type="button" id="desc-btn" class="btn btn-secondary">降序</button>
+            </div>
+        </div>
+        
+        <ul class="market-list-scroll">
+            <li id="1">
+                <div class="pic">
+                    <a onclick="" target="_blank"><img src="/images/booth/传传农家菜1.jpg" alt="传传农家菜"></a>
+                </div>
+                <div class="txt">
+                    <div class="tit"><a onclick="" target="_blank"><h4>传传农家菜</h4></a></div>
+                    <div class="comment">
+                        <div class="nebula_star">
+                            <div class="star_icon">
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_half"></span>
+                            </div>
+                            <div class="star_score">4.5</div>
+                        </div>
+                    </div>
+                    <div class="tag">简要介绍<em class="sep">|</em><span class="tag-intro">自家种植蔬菜水果，无公害，价格实惠</span></div>
+                    <div class="tag">具体地址<em class="sep">|</em><span class="tag-addr">烟台路与滨州路路口西30米路南</span></div>
+                    <div class="tag">联系方式<em class="sep">|</em><span class="tag-phone">13866364823</span></div>
+                </div>
+                <div class="right-txt">
+                    <div class="tag">
+                        <div class="tag">所属市场<em class="sep">|</em>
+                            <span class="tag-category">大学城夜市</span>
+                        </div>
+                        <div class="tag">所属类别<em class="sep">|</em>
+                            <span class="tag-category">美食、果蔬</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li id="1">
+                <div class="pic">
+                    <a onclick="" target="_blank"><img src="/images/booth/文浩烧烤1.jpg" alt="传传农家菜"></a>
+                </div>
+                <div class="txt">
+                    <div class="tit"><a onclick="" target="_blank"><h4>文浩烧烤</h4></a></div>
+                    <div class="comment">
+                        <div class="nebula_star">
+                            <div class="star_icon">
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_half"></span>
+                            </div>
+                            <div class="star_score">4.9</div>
+                        </div>
+                    </div>
+                    <div class="tag">简要介绍<em class="sep">|</em><span class="tag-intro">三年老店，味道棒，价格优！</span></div>
+                    <div class="tag">具体地址<em class="sep">|</em><span class="tag-addr">烟台路与滨州路路口西30米路南</span></div>
+                    <div class="tag">联系方式<em class="sep">|</em><span class="tag-phone">13866364823</span></div>
+                </div>
+                <div class="right-txt">
+                    <div class="tag">
+                        <div class="tag">所属市场<em class="sep">|</em>
+                            <span class="tag-category">大学城夜市</span>
+                        </div>
+                        <div class="tag">所属类别<em class="sep">|</em>
+                            <span class="tag-category">美食</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li id="1">
+                <div class="pic">
+                    <a onclick="" target="_blank"><img src="/images/booth/文浩小家电1.jpg" alt="传传农家菜"></a>
+                </div>
+                <div class="txt">
+                    <div class="tit"><a onclick="" target="_blank"><h4>文浩小家电</h4></a></div>
+                    <div class="comment">
+                        <div class="nebula_star">
+                            <div class="star_icon">
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_half"></span>
+                            </div>
+                            <div class="star_score">4.7</div>
+                        </div>
+                    </div>
+                    <div class="tag">简要介绍<em class="sep">|</em><span class="tag-intro">经营各式小家电，质量安全有保障！</span></div>
+                    <div class="tag">具体地址<em class="sep">|</em><span class="tag-addr">山东省青岛市市南区南京路202号</span></div>
+                    <div class="tag">联系方式<em class="sep">|</em><span class="tag-phone">13256011237</span></div>
+                </div>
+                <div class="right-txt">
+                    <div class="tag">
+                        <div class="tag">所属市场<em class="sep">|</em>
+                            <span class="tag-category">东李村大集</span>
+                        </div>
+                        <div class="tag">所属类别<em class="sep">|</em>
+                            <span class="tag-category">日用</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li id="1">
+                <div class="pic">
+                    <a onclick="" target="_blank"><img src="/images/booth/文浩服装屋1.jpg" alt="传传农家菜"></a>
+                </div>
+                <div class="txt">
+                    <div class="tit"><a onclick="" target="_blank"><h4>文浩服装屋</h4></a></div>
+                    <div class="comment">
+                        <div class="nebula_star">
+                            <div class="star_icon">
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_half"></span>
+                            </div>
+                            <div class="star_score">4.5</div>
+                        </div>
+                    </div>
+                    <div class="tag">简要介绍<em class="sep">|</em><span class="tag-intro">经营各式潮流服装，清仓处理，低价甩卖</span></div>
+                    <div class="tag">具体地址<em class="sep">|</em><span class="tag-addr">太公一路与碧海路交汇处南200米</span></div>
+                    <div class="tag">联系方式<em class="sep">|</em><span class="tag-phone">13066069860</span></div>
+                </div>
+                <div class="right-txt">
+                    <div class="tag">
+                        <div class="tag">所属市场<em class="sep">|</em>
+                            <span class="tag-category">莱顿小镇临时市场</span>
+                        </div>
+                        <div class="tag">所属类别<em class="sep">|</em>
+                            <span class="tag-category">服装</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li id="1">
+                <div class="pic">
+                    <a onclick="" target="_blank"><img src="/images/booth/文浩玩具屋1.jpg" alt="传传农家菜"></a>
+                </div>
+                <div class="txt">
+                    <div class="tit"><a onclick="" target="_blank"><h4>文浩玩具屋</h4></a></div>
+                    <div class="comment">
+                        <div class="nebula_star">
+                            <div class="star_icon">
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_half"></span>
+                            </div>
+                            <div class="star_score">4.3</div>
+                        </div>
+                    </div>
+                    <div class="tag">简要介绍<em class="sep">|</em><span class="tag-intro">经营各年龄段玩具，价格便宜，质量优！</span></div>
+                    <div class="tag">具体地址<em class="sep">|</em><span class="tag-addr">山东省青岛市崂山区平水路</span></div>
+                    <div class="tag">联系方式<em class="sep">|</em><span class="tag-phone">17860202762</span></div>
+                </div>
+                <div class="right-txt">
+                    <div class="tag">
+                        <div class="tag">所属市场<em class="sep">|</em>
+                            <span class="tag-category">崂山夜市</span>
+                        </div>
+                        <div class="tag">所属类别<em class="sep">|</em>
+                            <span class="tag-category">娱乐、日用</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li id="1">
+                <div class="pic">
+                    <a onclick="" target="_blank"><img src="/images/booth/传传农家菜1.jpg" alt="传传农家菜"></a>
+                </div>
+                <div class="txt">
+                    <div class="tit"><a onclick="" target="_blank"><h4>传传农家菜</h4></a></div>
+                    <div class="comment">
+                        <div class="nebula_star">
+                            <div class="star_icon">
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_full"></span>
+                                <span class="star star_half"></span>
+                            </div>
+                            <div class="star_score">4.5</div>
+                        </div>
+                    </div>
+                    <div class="tag">简要介绍<em class="sep">|</em><span class="tag-intro">靠近大学城，客流量大，营业时间长</span></div>
+                    <div class="tag">具体地址<em class="sep">|</em><span class="tag-addr">烟台路与滨州路路口西30米路南</span></div>
+                    <div class="tag">联系方式<em class="sep">|</em><span class="tag-phone">13866364823</span></div>
+                </div>
+                <div class="right-txt">
+                    <div class="tag">
+                        <div class="tag">所属市场<em class="sep">|</em>
+                            <span class="tag-category">大学城夜市</span>
+                        </div>
+                        <div class="tag">所属类别<em class="sep">|</em>
+                            <span class="tag-category">美食、果蔬</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="page-alter">
+            <button type="button" id="pre-page" class="btn btn-sm btn-warning font-weight-bold">上一页</button>
+            <button class="btn disabled badge-primary" id="current-page">1</button>
+            <button type="button" id="next-page" class="btn btn-sm btn-warning font-weight-bold">下一页</button>
+        </div>
+    </div>
+
+    <footer>
+        <ul class="learn-more footer-ul">
+            <li class="white little footer-title">LEARN MORE</li>
+            <li><a class="gray little" href="index.html">如何服务</a></li>
+            <li><a class="gray little" href="index.html">使用技巧</a></li>
+            <li><a class="gray little" href="index.html">联系方式</a></li>
+        </ul>
+        <ul class="learn-more footer-ul">
+            <li><p class="white little footer-title">ABOUT US</p></li>
+            <li><a class="gray little" href="index.html">关于我们</a></li>
+            <li><a class="gray little" href="index.html">特性</a></li>
+            <li><a class="gray little" href="index.html">使用情景</a></li>
+        </ul>
+        <ul class="learn-more footer-ul">
+            <li><p class="white little footer-title">SUPPORT</p></li>
+            <li><a class="gray little" href="index.html">问答</a></li>
+            <li><a class="gray little" href="index.html">联系我们</a></li>
+            <li><a class="gray little" href="index.html">联系地址</a></li>
+        </ul>
+        <div>
+            <p class="white little footer-title">ENJOY YOUR LIFE</p>
+            <ul class="footer-icons">
+                <li><a href="https://www.linkedin.com"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-tencent-weibo" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
+    <script>
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+        });
+        var $name = '{{ name }}';
+    </script>
 </html>

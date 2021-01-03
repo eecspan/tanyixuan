@@ -10,4 +10,4 @@ def index(request):
         target_index = '/{identity}/index/'.format(identity=identity)
         return redirect(target_index)
     # 如果登录，跳转到index页面
-    return render(request, 'consumer/index.html', {'nickname': request.session['nickname']})
+    return render(request, 'consumer/index.html')

@@ -1,9 +1,10 @@
 import MySQLdb
 from utils.selfFunc import dictfetchall
 
+
 def db_check_market_repeat(user_name, market_name):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
 
     # 先看看有没有重复的摊铺名称
@@ -24,8 +25,8 @@ def db_check_market_repeat(user_name, market_name):
 
 
 def db_create_pic_url(id, category, pic_urls):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
 
     for url in pic_urls:
@@ -45,8 +46,8 @@ def db_create_pic_url(id, category, pic_urls):
 
 def db_create_market(user_name, market_name, market_category, market_introduction, market_address, market_capacity,
                      market_phone_number, longitude, latitude):
-    conn = MySQLdb.connect(host='36t27o3263.wicp.vip', user='tanyixuanU', password='tanyixuan1904',
-                           database='tanyixuan', charset='utf8', port=18486)
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
     cursor = conn.cursor()
     """
     sql = "insert into market" \
@@ -97,3 +98,87 @@ def db_create_market(user_name, market_name, market_category, market_introductio
     cursor.close()
     conn.close()
     return result
+
+
+def db_get_my_market(user_name):
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
+    cursor = conn.cursor()
+
+    # 再找未营业的
+    sql = "select id market_id, name market_name, category, introduction, " \
+          "(select url from pic_urls where category=\"market\" and id=market_id limit 0, 1) pic_url " \
+          "from market " \
+          "where manager_id=" \
+          "(select id from manager where user_name=\"{user_name}\");".format(user_name=user_name)
+    cursor.execute(sql)
+    market_list = dictfetchall(cursor)
+
+    # 关闭数据库连接
+    cursor.close()
+    conn.close()
+    return market_list
+
+
+def db_delete_market(market_name, user_name):
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
+    cursor = conn.cursor()
+    sql = "select id from market where name=\"{market_name}\" and manager_id=" \
+          "(select id from manager where user_name=\"{user_name}\");".format(market_name=market_name, user_name=user_name)
+    print(sql)
+    try:
+        cursor.execute(sql)
+        market_id = cursor.fetchone()  # 是一个元组形式
+        if market_id is None:
+            result = {"success": "false"}
+        else:
+            market_id = market_id[0]
+            result = {"market_id": market_id}
+            sql = "delete from market where id={market_id};".format(market_id=market_id)
+            try:
+                cursor.execute(sql)
+                # 提交
+                conn.commit()
+                result["success"] = "true"
+            except:
+                # 回退
+                conn.rollback()
+                result["success"] = "false"
+    except:
+        # 回退
+        conn.rollback()
+        result = {"success": "false"}
+
+    # 关闭数据库连接
+    cursor.close()
+    conn.close()
+    return result
+
+
+def db_delete_pic_url(id, category):
+    conn = MySQLdb.connect(host='localhost', user='tanyixuanU', password='tanyixuan1904',
+                           database='tanyixuan', charset='utf8', port=3306)
+    cursor = conn.cursor()
+
+    # 返回路径
+    sql = "select url from pic_urls where category=\"{category}\" and id={id};".format(category=category, id=id)
+    cursor.execute(sql)
+    pic_urls = cursor.fetchall()
+
+    # 删除他们
+    sql = "delete from pic_urls where category=\"{category}\" and id={id};".format(category=category, id=id)
+    try:
+        cursor.execute(sql)
+        # 成功了就提交
+        conn.commit()
+    except:
+        # 回退
+        conn.rollback()
+
+    # 关闭数据库连接
+    cursor.close()
+    conn.close()
+
+    # 返回路径，元组类型，在静态文件夹中把他们删除
+    return pic_urls
